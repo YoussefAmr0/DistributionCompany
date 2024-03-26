@@ -1,0 +1,18 @@
+.back img{
+    background-image: url("imgs/blue.png");
+ width: 80%;  
+}
+.log-form{
+    width: 30%;
+    
+
+}
+.log-form .login-btn{
+    /* Frame 649 */
+width: 500px;
+height: 40px;
+ border-radius: 12px;
+ background-color:#1C6E97;
+
+
+}
