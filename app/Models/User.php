@@ -11,26 +11,18 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+   
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+            'name', 'email', 'password', 'address', 'phone_num', 'user_type',
     ];
+    
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    // User.php
+public function cartItems()
+{
+    return $this->hasMany(CartItem::class);
+}
+
 
     /**
      * Get the attributes that should be cast.
