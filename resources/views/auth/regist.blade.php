@@ -8,12 +8,13 @@
 @section('content')
 
 <div class="row">
-  <div class="back col-md-6">
+  <div class="back col-md-6 col-12">
     <img src="{{ asset('img') }}/login.png" alt="logo">
   </div>
-  <div class="log-form col-md-6">
-    <h1 class="m-4">Create your Account</h1>
-  <form method="POST" action="{{ route('register') }}">
+  <div class="col-md-6 col-12">
+    <div class="register-form">
+        <h1 class="mt-4">Create your Account</h1>
+    <form method="POST" action="{{ route('register') }}">
         @csrf
       <div class="mb-3">
         <label for="name" :value="__('Name')" class="form-label">Name</label>
@@ -48,7 +49,7 @@
                             type="password"
                             name="password_confirmation" autocomplete="new-password">
       <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-      </div>      
+      </div>
       <button type="submit" class="login-btn btn-primary">{{ __('Register') }}</button>
     </form>
     <div class="mb-3">
@@ -56,7 +57,8 @@
         <button type="button" class="btn text-primary" data-toggle="modal" data-target="#exampleModalScrollable"> <a href="{{ route('login') }}">Login</a>
         </button>
 </div>
-  </div>
 </div>
-<!--  -->
+</div>
+</div>
+        <!--  -->
 @endsection
