@@ -1,14 +1,17 @@
 
 
- 
+
 .form-image {
   text-align: center;
 }
 
 .form-image img {
-  width:300px;
+    width:300px;
     height: auto;
-     margin-top: 20px; 
+    margin-top: 20px;
+    @media screen and (max-width:600px) {
+        width: 100%;
+    }
 }
 
 .file-label {
@@ -26,7 +29,7 @@ input[type="file"] {
   display: none;
 }
 
-  
+
 
 
   .form-edit{
