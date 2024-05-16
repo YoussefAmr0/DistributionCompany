@@ -29,7 +29,11 @@ input[type="file"] {
   display: none;
 }
 
-
+.sidenav-mobile {
+    @media screen and (max-width:425px) {
+        flex-direction: column;
+    }
+}
 
 
   .form-edit{

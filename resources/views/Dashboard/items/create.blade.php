@@ -12,7 +12,7 @@
 <header>
     <h1>Create Product</h1>
 </header>
-<div class="d-flex">
+<div class="d-flex sidenav-mobile">
     <!-- Sidebar -->
     @include('Dashboard.SideNav')
 
