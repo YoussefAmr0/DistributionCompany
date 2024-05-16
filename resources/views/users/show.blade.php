@@ -17,7 +17,7 @@
     <h1>Show Customer</h1>
 </header>
 @endif
-<div class="d-flex">
+<div class="d-flex nav-left-mobile">
     @if(auth()->check() && auth()->user()->user_type === 'admin')
     @include('Dashboard.SideNav')
     @endif
@@ -50,7 +50,7 @@
 
                     </div>
 
-                    <div class="row">
+                    <div class="row profile-btns">
                         @if(auth()->check() && auth()->user()->user_type === 'admin')
 
                         <div class="col text-center">

@@ -12,7 +12,7 @@
 <header>
     <h1>Edit Customer</h1>
 </header>
-<div class="d-flex sidenav-mobile">
+<div class="d-flex nav-left-mobile">
     @if(auth()->check() && auth()->user()->user_type === 'admin')
     @include('Dashboard.SideNav')
     @endif

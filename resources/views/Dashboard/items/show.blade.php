@@ -17,7 +17,7 @@
             <h1>Show Product</h1>
         </header>
     @endif
-<div class="d-flex">
+<div class="d-flex nav-left-mobile">
   <!-- Sidebar -->
   @if(auth()->check() && auth()->user()->user_type === 'admin')
   @include('Dashboard.SideNav')

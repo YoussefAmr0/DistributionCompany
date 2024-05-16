@@ -15,19 +15,24 @@ header h1 {
     width: auto;
     border-radius: 5px;
     padding: 10px;
-    transition: 1s;
+    transition: 0.3s;
 }
 .nav-left-mobile {
+    display: none;
     @media screen and (max-width:425px) {
         display: flex;
         flex-direction: column;
     }
+}
+.nav-left-mobile .mobile-nav-btn {
+    padding: 10px 20px;
 }
 @media screen and (max-width:425px) {
     .nav-left {
         display: block;
         position: absolute;
         left: -200px;
+        z-index: 1111;
 
     }
     .nav-left.show {
@@ -35,7 +40,7 @@ header h1 {
         position: absolute;
         left: 0;
         right: 0;
-        height: 100vh;
+        height: 70rem;
 
     }
 }

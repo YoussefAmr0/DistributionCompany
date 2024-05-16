@@ -35,3 +35,8 @@ div .card{
   line-height: 22px;
   color: #8B909A;
       }
+.profile-btns {
+    @media screen and (max-width:425px) {
+        flex-direction: column;
+    }
+}
