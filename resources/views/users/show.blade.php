@@ -26,7 +26,7 @@
 
 
         <div class="col-sm-12 col-lg-6">
-            <div class="card" style="width: 80rem ; height: 30rem;">
+            <div class="card card-mobile" >
                 <div class="row card-body">
                     <h5 class="col-sm-12 col-lg-3 card-title"><img src="{{ asset('img/User.webp') }}" alt=""></h5>
                     <div class="col-sm-12 col-lg-3">
@@ -139,13 +139,6 @@
                     </div>
                 </div>
                 </div>
-
-
-
-
-
-
-
 
             </div>
         </div>
