@@ -29,11 +29,15 @@
       <div class="product-details">
         <h1>{{$items->name}}</h1>
         <div class="control">
-          <button class="btn-product">
-            <span class="price">{{$items->sale_price}}LE</span>
-            <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-            <span class="buy">Add To Cart</span>
-          </button>
+        <form method="POST" action="{{ route('cart.add', ['item' => $items->id]) }}">
+    @csrf
+    <button type="submit" class="btn-product">
+        <span class="price">{{ $items->sale_price }}LE</span>
+        <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+        <span class="buy">Add To Cart</span>
+    </button>
+</form>
+
         </div>
       </div>
       <div class="product-image">

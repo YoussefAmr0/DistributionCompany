@@ -49,6 +49,8 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index')->middl
 Route::post('/add-to-cart/{item}', [CartController::class, 'addToCart'])->name('cart.add')->middleware(['auth']);
 Route::delete('/cart/{cartItem}', [CartController::class, 'deleteCartItem'])->name('cart.delete');
 Route::put('/cart/{cartItem}', [CartController::class, 'updateCartItem'])->name('cart.update');
+Route::get('/all-cart-items', [CartController::class, 'viewAllCartItems'])->name('cart.all');
+
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index')->middleware(['auth','admin']);
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create')->middleware(['auth','admin']);

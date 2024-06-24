@@ -33,7 +33,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Password</label>
-                        <input name="password" type="password" class="form-control" value="{{ $users->password }}">
+                        <input name="password" type="password" class="form-control" placeholder="Leave blank to keep current">
                     </div>
                     @if(auth()->check() && auth()->user()->user_type === 'admin')
                     <div class="mb-3">
@@ -46,7 +46,7 @@
                     @endif
                     <div class="mb-3">
                         <label class="form-label">Address</label>
-                        <input name="address" class="form-control" type="text">{{$users->address}}</input>
+                        <input name="address" class="form-control" type="text" value="{{$users->address}}"></input>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Phone Number</label>

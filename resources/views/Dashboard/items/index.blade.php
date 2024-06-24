@@ -20,11 +20,7 @@
 
     <!-- Content -->
     <div class="app-content">
-        <div class="app-content-actions">
-            <input class="search-bar" placeholder="Search..." type="text">
-            <div class="app-content-actions-wrapper">
-            </div>
-        </div>
+        
         <div class="products-area-wrapper tableView">
         <div class="products-header">
                     <div class="product-cell image">

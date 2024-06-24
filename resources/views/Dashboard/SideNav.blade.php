@@ -23,6 +23,10 @@
         <i class="fa-solid fa-address-book"></i>
         <a href="{{ route('contact.Dashindex') }}">Contacts</a>
     </button>
+    <button class="nav-link-left {{ request()->routeIs('cart.all') ? 'active' : '' }}" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+    <i class="fa-solid fa-basket-shopping"></i>
+        <a href="{{ route('cart.all') }}">Orders</a>
+    </button>
 </div>
 <div class="nav-left-mobile">
     <a data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" class="mobile-nav-btn"><i class="fa-solid fa-bars"></i> Side Menu</a>
@@ -54,6 +58,10 @@
         <button class="nav-link-left {{ request()->routeIs('contact.Dashindex') ? 'active' : '' }}" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">
             <i class="fa-solid fa-address-book"></i>
             <a href="{{ route('contact.Dashindex') }}">Contacts</a>
+        </button>
+        <button class="nav-link-left {{ request()->routeIs('cart.all') ? 'active' : '' }}" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+        <i class="fa-solid fa-basket-shopping"></i>
+            <a href="{{ route('cart.all') }}">Orders</a>
         </button>
     </div>
 </div>

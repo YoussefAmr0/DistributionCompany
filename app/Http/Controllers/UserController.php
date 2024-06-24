@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\CartItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -13,10 +14,12 @@ class UserController extends Controller
         $users = User::all(); 
         return view('users.index', ['users' => $users]);
     }
+
     public function create()
     {
         return view('users.create');
     }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -35,29 +38,34 @@ class UserController extends Controller
         
         return redirect()->route('users.index');
     }
+
     public function show(string $id)
     {
-        $users = User::findOrFail($id);
-        return view('users.show', ['users' => $users]);
+        $user = User::findOrFail($id);
+        $cartItems = CartItem::where('user_id', $id)->get();
+        return view('users.show', ['user' => $user, 'cartItems' => $cartItems]);
     }
+
     public function edit(string $id)
     {
         $users = User::findOrFail($id);
         return view('users.edit', ['users' => $users]);
     }
-    public function update(Request $request, string $item)
+
+    public function update(Request $request, string $id)
 {
-    $user = User::findOrFail($item);
+    $user = User::findOrFail($id);
 
     $request->validate([
         'name' => 'required',
         'email' => 'required|email|unique:users,email,' . $user->id,
-        'password' => 'nullable|min:6',
+        'password' => 'nullable|min:6', // Password is nullable because it's optional in the update form
         'address' => 'required',
         'phone_num' => 'required|numeric',
         'user_type' => 'required|in:user,admin',
     ]);
 
+    // Prepare data to update
     $userData = [
         'name' => $request->name,
         'email' => $request->email,
@@ -71,21 +79,19 @@ class UserController extends Controller
         $userData['password'] = bcrypt($request->password);
     }
 
+    // Update user record
     $user->update($userData);
 
-    return redirect()->back();
+    // Redirect back to the edit page or any other appropriate route
+    return redirect()->back()->with('status', 'User updated successfully');
 }
+
 
     public function destroy(string $id)
     {
-        $users = User::findOrFail($id);
-
-        $users->delete();
+        $user = User::findOrFail($id);
+        $user->delete();
 
         return redirect()->route('users.index');
-
     }
-
-
-
 }

@@ -47,6 +47,12 @@ public function updateCartItem(Request $request, CartItem $cartItem) {
 
 public function deleteCartItem(CartItem $cartItem) {
     $cartItem->delete();
-    return redirect()->route('cart.index');
+    return redirect()->back();
+}
+
+public function viewAllCartItems() {
+    $cartItems = CartItem::with(['user', 'item'])->get();
+
+    return view('Dashboard.orders.all-items', compact('cartItems'));
 }
 }
