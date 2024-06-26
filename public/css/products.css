@@ -429,3 +429,46 @@ a:hover{
         overflow-y: hidden;
         padding-right: 17px; /* Add scrollbar width to prevent content from shifting */
     }
+    /*new  update */
+    .products-area-wrapper {
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .products-header, .products-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+  }
+  
+  .product-cell {
+      flex: 1;
+      min-width: 150px;
+      padding: 10px;
+      text-align: left;
+  }
+  
+  @media (max-width: 768px) {
+      .products-header, .products-row {
+          flex-direction: column;
+      }
+  
+      .product-cell {
+          min-width: 100%;
+          text-align: left;
+      }
+  }
+  
+  @media (max-width: 480px) {
+      .products-header, .products-row {
+          flex-direction: column;
+      }
+  
+      .product-cell {
+          min-width: 100%;
+          text-align: left;
+      }
+  }
+  
