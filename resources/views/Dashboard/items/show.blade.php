@@ -6,7 +6,6 @@
 <style>
  </style>
 @endsection
-
 @section('title')
 <title>Show Product</title>
 @endsection
@@ -40,7 +39,7 @@
                 </div>
             </div>
             <div class="product-image">
-                <img src="{{ asset('storage/' . $items->product_image) }}" alt="{{ $items->name }}">
+                <img src="{{ asset('storage/'. $items->product_image) }}" alt="{{ $items->name }}">
                 <div class="info">
                     <h2>Description</h2>
                     <p class="information">{{$items->description}}</p>
