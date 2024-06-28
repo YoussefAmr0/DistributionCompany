@@ -3,9 +3,8 @@
 @section('css-file')
 <link rel="stylesheet" href="{{ asset('css/view-product.css') }}">
 <link rel="stylesheet" href="{{ asset('css/dashnav.css') }}">
-<style>
- </style>
 @endsection
+
 @section('title')
 <title>Show Product</title>
 @endsection
@@ -33,6 +32,8 @@
                         <button type="submit" class="btn-product">
                             <span class="price">{{ $items->sale_price }}LE</span>
                             <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                            <br>
+                            
                             <span class="buy">Add To Cart</span>
                         </button>
                     </form>
